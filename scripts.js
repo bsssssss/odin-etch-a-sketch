@@ -1,18 +1,37 @@
+function getRandomRgb() {
+  let values = [0, 0, 0];
+  for (let i in values) {
+    values[i] = Math.floor(Math.random() * 255);
+  }
+  return values;
+}
+
+function IncrOpacity(count) {
+  return Math.max(0, Math.min(1, (count + 1) / 10));
+}
+
 function createGrid(w, h) {
   const container = document.querySelector(".container");
   const colNum = w;
   const rowNum = h;
 
-  // use mouseover to allow delegation
   container.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("col")) {
-      event.target.style.backgroundColor = "black";
+      let currentCount = parseInt(event.target.dataset.hoverCount || "0");
+      let rgb = getRandomRgb();
+      let opacity = IncrOpacity(currentCount);
+
+      currentCount++;
+
+      event.target.dataset.hoverCount = currentCount;
+      event.target.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+      event.target.style.opacity = opacity;
     }
   });
 
   container.addEventListener("mouseout", (event) => {
     if (event.target.classList.contains("col")) {
-      event.target.style.backgroundColor = "gray";
+      // event.target.style.backgroundColor = "gray";
     }
   });
 
