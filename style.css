@@ -1,0 +1,23 @@
+.container {
+  width: 480px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.col {
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.container,
+.row {
+  gap: 2px;
+}
