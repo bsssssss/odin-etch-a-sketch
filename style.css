@@ -3,6 +3,8 @@
   height: 480px;
   display: flex;
   flex-direction: column;
+  margin: 10px 0;
+  border: 1px solid black;
 }
 
 .row {
@@ -11,13 +13,12 @@
 }
 
 .col {
-  border: 1px solid black;
   margin: 0;
   padding: 0;
   flex: 1;
 }
 
-.container,
-.row {
-  gap: 2px;
-}
+/* .container, */
+/* .row { */
+/*   gap: 2px; */
+/* } */
