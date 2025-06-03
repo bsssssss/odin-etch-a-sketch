@@ -22,8 +22,8 @@ function createGrid(w, h) {
       let opacity = IncrOpacity(currentCount);
 
       currentCount++;
-
       event.target.dataset.hoverCount = currentCount;
+
       event.target.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
       event.target.style.opacity = opacity;
     }
@@ -31,7 +31,6 @@ function createGrid(w, h) {
 
   container.addEventListener("mouseout", (event) => {
     if (event.target.classList.contains("col")) {
-      // event.target.style.backgroundColor = "gray";
     }
   });
 
