@@ -10,6 +10,15 @@ function createGrid(w, h) {
     for (let j = 0; j < colNum; j++) {
       const col = document.createElement("div");
       col.classList.add("col");
+
+      col.addEventListener("mouseenter", (event) => {
+        col.style.backgroundColor = "black";
+      });
+
+      col.addEventListener("mouseleave", (event) => {
+        col.style.backgroundColor = "gray";
+      });
+
       row.appendChild(col);
     }
 
