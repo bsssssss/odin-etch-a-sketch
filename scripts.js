@@ -11,11 +11,11 @@ function createGrid(w, h) {
       const col = document.createElement("div");
       col.classList.add("col");
 
-      col.addEventListener("mouseenter", (event) => {
+      col.addEventListener("mouseenter", () => {
         col.style.backgroundColor = "black";
       });
 
-      col.addEventListener("mouseleave", (event) => {
+      col.addEventListener("mouseleave", () => {
         col.style.backgroundColor = "gray";
       });
 
