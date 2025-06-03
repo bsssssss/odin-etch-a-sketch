@@ -1,14 +1,20 @@
-const container = document.querySelector(".container");
-const rowNum = 16;
-const colNum = 16;
+function createGrid(w, h) {
+  const container = document.querySelector(".container");
+  const colNum = w;
+  const rowNum = h;
 
-for (let i = 0; i < rowNum; i++) {
-  const row = document.createElement("div");
+  for (let i = 0; i < rowNum; i++) {
+    const row = document.createElement("div");
+    row.classList.add("row");
 
-  for (let j = 0; j < colNum; j++) {
-    const col = document.createElement("div");
-    row.appendChild(col);
+    for (let j = 0; j < colNum; j++) {
+      const col = document.createElement("div");
+      col.classList.add("col");
+      row.appendChild(col);
+    }
+
+    container.appendChild(row);
   }
-
-  container.appendChild(row);
 }
+
+createGrid(16, 16);
